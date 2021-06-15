@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+
+
 import './App.css';
+import {useDispatch} from "react-redux";
+import {getCountries} from "./store/actions/countriesActions";
 
 function App() {
-  return (
-    <div className="App">
+    const dispatch = useDispatch();
 
-    </div>
-  );
+    useEffect(() => {
+        console.log('hello');
+        dispatch(getCountries());
+    }, [dispatch]);
+
+    return (
+        <div className="App">
+
+        </div>
+    );
 }
 
 export default App;
