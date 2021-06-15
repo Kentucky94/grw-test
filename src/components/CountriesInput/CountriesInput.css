@@ -1,25 +1,38 @@
-/*.CountriesInputWrapper {*/
-/*    position: relative;*/
-/*}*/
+.CountriesInputWrapper {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+}
 
-/*.CountriesInput {*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*}*/
+.CountriesInput {
+    display: inline-block;
+    padding: 5px;
+}
 
 .CountriesInput_list {
     display: block;
+    padding: 20px;
     width: 300px;
     max-height: 200px;
     overflow-y: scroll;
     text-align: left;
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
+    z-index: 10;
+    background: white;
+    border: 1px solid black;
+    border-right: none;
+    list-style: none;
 }
 
 .CountriesInput_list--closed {
     display: none;
+}
+
+.CountriesInput_listItem {
+    display: block;
+    padding: 5px;
 }
 
 .CountriesInput_listItem:hover {
