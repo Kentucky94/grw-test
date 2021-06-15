@@ -2,7 +2,7 @@ import {GET_COUNTRIES_SUCCESS, GET_COUNTRY_DATA_SUCCESS} from "../actions/countr
 
 const initialState = {
     countries: [],
-    countryData: {}
+    countryData: [],
 };
 
 const countriesReducer = (state = initialState, action) => {

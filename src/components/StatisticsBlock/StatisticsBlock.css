@@ -1,0 +1,27 @@
+.StatisticsBlock {
+    width: 60%;
+}
+
+.StatisticsBlock_item {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.StatisticsBlock_item_date {
+    width: 40%;
+}
+
+.StatisticsBlock_item_counts {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.StatisticsBlock_item_count {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}

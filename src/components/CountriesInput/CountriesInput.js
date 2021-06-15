@@ -1,13 +1,13 @@
 import React from 'react';
 import './CountriesInput.css'
 
-const CountriesInput = ({options, onChange, onSelect}) => {
+const CountriesInput = ({options, onChange, onSelect, selectedCountry}) => {
     const countries = options.map((country, i) => {
         return (
             <li
                 key={i}
                 className="CountriesInput_listItem"
-                onClick={() => onSelect(country.Slug)}
+                onClick={() => onSelect(country.Country, country.Slug)}
             >
                 {country.Country}
             </li>
@@ -16,7 +16,7 @@ const CountriesInput = ({options, onChange, onSelect}) => {
 
     return (
         <div className="CountriesInputWrapper">
-            <input className="CountiesInput" type="options" onChange={event => onChange(event)}/>
+            <input className="CountiesInput" value={selectedCountry} type="options" onChange={event => onChange(event)}/>
             <ul className="CountriesInput_list">
                 {countries}
             </ul>
