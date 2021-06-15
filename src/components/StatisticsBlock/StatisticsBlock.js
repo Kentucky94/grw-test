@@ -1,5 +1,5 @@
 import React from 'react';
-import StatisticsBlockItem from "./StatisticsBlockItem/StatisticsBlockItem";
+import StatisticsBlockItem from "../StatisticsBlockItem/StatisticsBlockItem";
 import './StatisticsBlock.css'
 
 const StatisticsBlock = ({data}) => {
