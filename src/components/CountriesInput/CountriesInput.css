@@ -1,0 +1,23 @@
+/*.CountriesInputWrapper {*/
+/*    position: relative;*/
+/*}*/
+
+/*.CountriesInput {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+
+.CountriesInput_list {
+    width: 300px;
+    max-height: 200px;
+    overflow-y: scroll;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.CountriesInput_listItem:hover {
+    cursor: pointer;
+    background: lightblue;
+}
