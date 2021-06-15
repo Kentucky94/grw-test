@@ -1,0 +1,26 @@
+.RecoveredBlock {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.RecoveredBlock_badge {
+    background: mediumseagreen;
+    border-radius: 20px;
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    height: 270px;
+}
+
+.RecoveredBlock_badge_heading {
+    font-size: 16px;
+}
+
+.RecoveredBlock_badge_body {
+    height: 200px;
+    line-height: 200px;
+    font-size: 50px;
+    border-bottom: 1px solid white;
+}
