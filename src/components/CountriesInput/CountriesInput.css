@@ -8,6 +8,7 @@
 /*}*/
 
 .CountriesInput_list {
+    display: block;
     width: 300px;
     max-height: 200px;
     overflow-y: scroll;
@@ -15,6 +16,10 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.CountriesInput_list--closed {
+    display: none;
 }
 
 .CountriesInput_listItem:hover {

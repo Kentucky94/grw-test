@@ -1,26 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getCountries, getCountryData} from "../../store/actions/countriesActions";
+import {getCountries, getCountryData, setSelectedCountry} from "../../store/actions/countriesActions";
 import CountriesInput from "../../components/CountriesInput/CountriesInput";
 
 const InputContainer = () => {
     const dispatch = useDispatch();
-    const [listOptions, setListOptions] = useState([]);
-    const [selectedCountry, setSelectedCountry] = useState('Kyrgyzstan');
+    const selectedCountryData = useSelector(state => state.selectedCountry);
     const countries = useSelector(state => state.countries);
+
+    const [inputValue, setInputValue] = useState(selectedCountryData.Country || "Kyrgyzstan");
+    const [listOptions, setListOptions] = useState([]);
+    const [listOpen, setListOpen] = useState(false);
 
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
 
     const inputChangeHandler = event => {
-        setSelectedCountry(event.target.value);
-        setListOptions(filterOptions(selectedCountry));
+        const inputText = event.target.value;
+
+        setInputValue(inputText);
+        setListOptions(filterOptions(inputValue));
+        setListOpen(true);
     };
 
-    const countrySelectHandler = (countryName, countrySlug) => {
-        setSelectedCountry(countryName);
-        dispatch(getCountryData(countrySlug));
+    const countrySelectHandler = countryData => {
+        dispatch(setSelectedCountry(countryData));
+        dispatch(getCountryData(countryData.Slug));
+        setInputValue(countryData.Country);
+        setListOpen(false);
     };
 
     const filterOptions = value => countries.filter(country => country.Country.toLowerCase().includes(value.toLowerCase()));
@@ -31,7 +39,8 @@ const InputContainer = () => {
                 onChange={inputChangeHandler}
                 onSelect={countrySelectHandler}
                 options={listOptions}
-                selectedCountry={selectedCountry}
+                value={inputValue}
+                isListOpen={listOpen}
             />
         </div>
     );
